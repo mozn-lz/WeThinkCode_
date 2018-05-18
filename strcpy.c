@@ -80,6 +80,28 @@ char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 	s1[i] = '\0';
 	return (s1);
 }
+
+size_t		strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+{
+		int i;
+
+		i = ft_strlen(dest);
+
+		while (src[i] != '\0' && dstsize-- > 0)
+		{
+			dest[i++] = src[j++];
+		}
+		return (dest[i] = '\0')	;
+		
+}
+char	*strchr(const char *s, int c);
+char	*strrchr(const char *s, int c);
+char	*strstr(const char stack, const char  *needle);
+char	*strnstr(const char * stach, const char *needle, size_t len);
+char	*strcmp(const char *s1, const char *s2);
+char	*strncmp(const char *s1, const char *s2, size_t n);
+int		atoi(const char *str)
+
 char *strdup(const char *s)
 {
 	int i;
