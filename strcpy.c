@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 /*	start TEST functions	*/
 int		ft_strlen(char  *str)
@@ -33,6 +33,7 @@ char	*ft_strcpy(char *dest, const char *src)
 
 char	*ft_strncpy(char *dest, const char *src, size_t len)
 {
+	/*	strncpy	*/
 	int i;
 	
 	i = 0;
@@ -67,19 +68,45 @@ char	*ft_strcat(char *restrict s1, const char *restrict s2)
 }
 char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
-	
+	int i;
+	int j;
+
+	i = ft_strlen(s1);
+	j = 0;
+	while (s2[j] && n-- > 1)
+	{
+		s1[i++] = s2[j++];
+	}
+	s1[i] = '\0';
+	return (s1);
 }
+char *strdup(const char *s)
+{
+	int i;
+	char *rtn;
 
-
+	i = 0;
+	while (s[i])
+		i++;
+	rtn = (char *)malloc(sizeof(char ) * i);
+	if (rtn)
+	{
+		return (ft_strcpy(rtn, s));
+	}
+	else
+		return (NULL);
+}
 int		main(void)
 {
 	char s1[] = "lord";
 	char s2[] = "Chaos";
+	char *str;
 
+	str = strdup(s1);
 //	printf("strcat %s\n", ft_strcat(s1, s2));
-	printf("strcpy: %s\n", ft_strcpy(s1, s2));
-	printf("strncpy: %s\n", ft_strncpy(s1, s2, sizeof(s2)));
-//	printf("string: %s\n", s1);
+	printf("strcpy: %s\n", ft_strcat(s1, s2));
+	printf("strncpy: %s\n", ft_strncat(s2, s1, sizeof(s1)));
+	printf("string: %s\n", str);
 
 	return (0);
 }
