@@ -1,3 +1,4 @@
+#include "libft.h"
 char	tolower(char)
 {
 	if (c <= 90 && c >= 65)

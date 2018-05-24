@@ -1,3 +1,5 @@
+#include "libft.h"
+#include "libft.h"
 void ft_putchar(char c);
 
 void	ft_putstr(char *str)

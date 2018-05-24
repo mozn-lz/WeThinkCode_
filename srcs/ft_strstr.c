@@ -1,3 +1,4 @@
+#include "libft.h"
 char	*ft_strstr(const char *stack, const char *needle)
 {
 	int i;
