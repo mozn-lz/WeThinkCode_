@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "libft.h"
 
 int main()
@@ -28,46 +29,72 @@ int main()
 	*ft_memset(void *b, int c, size_t len)
 */	
 
-	ft_putstr("___FT_STRING___\n");
+//	ft_putstr("___FT_STRING___\n");
+//	char s1[] = "Hello"; char s2[] = " World";
+
+//	ft_putstr (ft_strcat(s1, s2));
+//	ft_putstr(">>>");
+//	char s[] = "Awesome";// int n = 5;
+
+//	print = (strchr(s, n));
+//	ft_putstr(print);
+
+//	s1 = "Hero"; s2 = " Cup";
+//	printf("%d", ft_strcmp(s1, s2));
+ //  char str1[15];
+ //  char str2[15];
+  // int ret;
+
+
+ //  strcpy(str1, "ABCDEF");
+ //  strcpy(str2, "ABCDeF");
+
+//   ret = ft_strcpy(str1, str2);
+
+//	char dest[] = "gogog"; char src[] = "gfr";
+//	printf("%s", ft_strcpy(dest, src));
 	
-	char s1[] = "Hello"; char s2[] = " World";
-	ft_putstr (ft_strcat(s1, s2));
-	ft_putstr(">>>");
-	char s[] = "growth"; int n = 5;
-	ft_putstr(ft_strchr(s, n));
+//	s = "Awesome";
+//	printf("%s", ft_strdup(s));
+	
+	/*
+	 * relook
+	 *
+	char dest[] = "Brilliant"; int destsize = strlen(s);
+	printf("sr %zu", strlcat(dest, s, destsize));
+	printf("\n");
+	printf("ft_ %zu", ft_strlcat(dest, s, destsize));
+	printf("\n");
+
+	*/
+	
+//	char s[] = "mklen";
+//	printf("%d", ft_strlen(s));
+
+/*
+ * ORIGINAL DOES NOT WORK
+ *
+	char s1[] = "WeThi"; char s2[] = "nkCode_"; int n = ft_strlen(s2);
+	printf("%s ", strncat(s1, s2, n));
+*/
+
+//	char s1[] = "abcd"; char s2[] = "abcd"; int  n = 124;
+//	printf("%d\n", strncmp(s1, s2, n));
+//	printf("%d\n", ft_strncmp(s1, s2, n));
+
+	char dest[] = "wofdrk"; char src[] = "frogs"; int len = 4;
+//	printf("%s\n", strncpy(dest, src, len));
+	printf("%s\n", ft_strncpy(dest, src, len));
+
 /*	
-	s1[] = "Hero"; s2[] = " Cup";
-	ft_putstr(ft_strcmp(s1, s2));
-	
-	char dest[] = ""; char src[] = "";
-	ft_putstr(ft_strcpy(dest, src));
-	
-	s = "Awesome";
-	ft_putstr(ft_strdup(s));
-	
-	dest = "Brilliant"; int destsize = 5;
-	ft_putstr(ft_strlcat(dest, destsize));
-	
-	s = "Moeketsane";
-	ft_putstr(ft_strlen(s));
-
-	s1 = "WeThi"; s2 = "nkCode_"; n = strlen(s2);
-	ft_putstr(ft_strncat(s1, s2, n));
-
-	s1 = ""; s2 = "" n = ;
-	ft_putstr(ft_strncmp(s1, s2, n));
-
-	dest = "work"; src = "work"; int len = 4;
-	ft_putstr(ft_strncpy(dest, src, len));
-
 	char stack[] = "Welcometocapetown"; char needle = "tocape"; len = 10;
-	ft_putstr(ft_strnstr(stack, needle, len));
+	printf(ft_strnstr(stack, needle, len));
 
 	s = "The Awesomness"; n = 10
-	ft_putstr(ft_strrchr(*s, n));
+	printf(ft_strrchr(*s, n));
 
 	stack = "do for change"; needle = "for";
-	ft_putstr(ft_strstr(stack, needle));
+	printf(ft_strstr(stack, needle));
 */
 	return (0);
 }

@@ -5,7 +5,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t len)
 	int i;
 	
 	i = 0;
-	while ((src[i] != '\0') && len > 1)
+	while ((src[i] != '\0') && len != 0)
 	{
 		dest[i] = src[i];
 		i++;

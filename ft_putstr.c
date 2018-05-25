@@ -1,15 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/25 17:05:23 by msefako           #+#    #+#             */
+/*   Updated: 2018/05/25 17:24:55 by msefako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include "libft.h"
-void ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
 	int i;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i++]);
-	}
-	ft_putchar('\n');
+	i = -1;
+	while (str[++i])
+		ft_putchar(str[i]);
 }
