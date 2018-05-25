@@ -11,4 +11,5 @@ void	ft_putstr(char *str)
 	{
 		ft_putchar(str[i++]);
 	}
+	ft_putchar('\n');
 }

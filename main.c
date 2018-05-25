@@ -1,58 +1,73 @@
-#include <unistd.h>
-
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int	ft_strlen(char *c);
-char	toupper(char *c);
-char	tolower(char *c);
+#include "libft.h"
 
 int main()
 {
-	char *name	= "WeThinkCode_\n";
-//	char *upcase	= "HELLO\n";
-//	char *donwcase	= "goodbye\n";
-//	char *mixed	= "1g-5a	49(^&# ds_fin\n";
-//	char *t_number	= "2018\n";
-//	int number	= 2018;
-
-	ft_putstr(name);
-	ft_putnbr(ft_strlen(name));
-//	ft_putstr(upcase(name));
-//	ft_putstr(toupper(name));
-//	ft_putstr(tolower(name));
-//	strdup();
-	ft_atoi
-	ft_memccpy
-	ft_putnbr
-	ft_strdup
-	ft_strrchr
-	ft_bzero
-	ft_memchr
-	ft_putstr
-	ft_strlcat
-	ft_strstr
-	ft_isalnum
-	ft_memcmp
-	ft_strcat
-	ft_strlen
-	ft_tolower
-	ft_isalpha
-	ft_memcpy
-	ft_strchr_2
-	ft_strncat
-	ft_toupper
-	ft_isascii
-	ft_memmove
-	ft_strchr
-	ft_strncmp
-	ft_isdigit
-	ft_memset
-	ft_strcmp
-	ft_strncpy
-	ft_isprint
-	ft_putchar
-	ft_strcpy
-	ft_strnstr
+//	char *name	= "WeThinkCode_\n";
+/*	ft_putchar(char c)
+	ft_putnbr(int n)
+	ft_putchar(char c);
+	ft_putstr(char *str)
 	
+	ft_putnbr(ft_atoi("500"));
+	//ft_putstr("___FT_IS___\n");
+	ft_putnbr(65);
+	ft_putnbr(ft_isalnum(93));
+	ft_putnbr(ft_isalpha(42));
+	ft_putnbr(ft_isascii(300));
+	ft_putnbr(ft_isdigit(30));
+	ft_putnbr(ft_isprint(1));
+*/
+/*	
+	ft_putstr("___FT_MEM___\n");
+	ft_bzero(void *s, size_t n)
+	*ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n)
+	*ft_memchr(const void *s, int c, size_t n)
+	ft_memcmp(const void *s1, const void *s2, size_t n)
+	*ft_memcpy(void *dest, const void *src, size_t n)
+	*ft_memmove(void *dest, const void *src, size_t len)
+	*ft_memset(void *b, int c, size_t len)
+*/	
+
+	ft_putstr("___FT_STRING___\n");
+	
+	char s1[] = "Hello"; char s2[] = " World";
+	ft_putstr (ft_strcat(s1, s2));
+	ft_putstr(">>>");
+	char s[] = "growth"; int n = 5;
+	ft_putstr(ft_strchr(s, n));
+/*	
+	s1[] = "Hero"; s2[] = " Cup";
+	ft_putstr(ft_strcmp(s1, s2));
+	
+	char dest[] = ""; char src[] = "";
+	ft_putstr(ft_strcpy(dest, src));
+	
+	s = "Awesome";
+	ft_putstr(ft_strdup(s));
+	
+	dest = "Brilliant"; int destsize = 5;
+	ft_putstr(ft_strlcat(dest, destsize));
+	
+	s = "Moeketsane";
+	ft_putstr(ft_strlen(s));
+
+	s1 = "WeThi"; s2 = "nkCode_"; n = strlen(s2);
+	ft_putstr(ft_strncat(s1, s2, n));
+
+	s1 = ""; s2 = "" n = ;
+	ft_putstr(ft_strncmp(s1, s2, n));
+
+	dest = "work"; src = "work"; int len = 4;
+	ft_putstr(ft_strncpy(dest, src, len));
+
+	char stack[] = "Welcometocapetown"; char needle = "tocape"; len = 10;
+	ft_putstr(ft_strnstr(stack, needle, len));
+
+	s = "The Awesomness"; n = 10
+	ft_putstr(ft_strrchr(*s, n));
+
+	stack = "do for change"; needle = "for";
+	ft_putstr(ft_strstr(stack, needle));
+*/
 	return (0);
 }

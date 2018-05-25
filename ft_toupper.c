@@ -1,10 +1,11 @@
 #include "libft.h"
-int	tolower(int c)
+
+int		toupper(int c)
 {
 	if (c <= 90 && c >= 65)
 	{
 		c -= 32;
-		return (char *(c));
+		return (c);
 	}
 	else
 		return (c);

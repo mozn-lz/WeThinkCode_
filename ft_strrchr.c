@@ -1,4 +1,5 @@
 #include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int i;
@@ -14,7 +15,7 @@ char	*ft_strrchr(const char *s, int c)
 			return (&sc[i]);
 	}
 	if (sc[i] == tc)
-		return (sc[i]);
+		return (&sc[i]);
 	else
 		return (NULL);
 
