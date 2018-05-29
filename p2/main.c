@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/29 03:34:23 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/29 03:34:59 by msefako          ###   ########.fr       */
+/*   Created: 2018/05/29 02:32:23 by msefako           #+#    #+#             */
+/*   Updated: 2018/05/29 02:43:24 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-char 	*ft_strnew(size_t size)
+int		ftlen(char *s)
 {
-	char *s[size];
+	int	i = 0;
 
-	s = ft_memalloc(size);
-	if(s != NUL)
-	{
-		ft_bzero(s);
-		return (s);
-	}
-	return (NULL);
+	while (s[i++])
+	;
+	return (i -1);
+}
+
+int		main()
+{
+	char a[] = "hello";
+	printf ("%d\n", ftlen(a));
+	return (0);
 }

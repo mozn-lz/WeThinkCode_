@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/29 03:34:23 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/29 03:34:59 by msefako          ###   ########.fr       */
+/*   Created: 2018/05/28 23:55:33 by msefako           #+#    #+#             */
+/*   Updated: 2018/05/29 02:32:06 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char 	*ft_strnew(size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *s[size];
+	int		i;
+	char	fresh;
 
-	s = ft_memalloc(size);
-	if(s != NUL)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		ft_bzero(s);
-		return (s);
+		ft_striteri(s, f(i, s[i]));
+		i++;
 	}
-	return (NULL);
+	fresh = (char *) malloc(sizeof(char) * ft_strlen(s));
+	return (fresh);
 }
