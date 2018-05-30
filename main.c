@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 02:32:23 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/29 02:43:24 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/30 14:09:07 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 int		main()
 {
-	char a[] = "hello";
-//	printf ("%d\n", ftlen(a));
-	ft_putstr(a);
+	char a = 'a';
+	ft_putstr(ft_toupper(a));
 	ft_putstr("\n");
 	return (0);
 }
