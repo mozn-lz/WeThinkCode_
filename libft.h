@@ -6,13 +6,19 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 14:28:44 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/25 14:30:11 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/30 18:02:56 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# ifndef LIBFT_H
+# define LIBFT_H
+
+#define BUFF_SIZE 200
 
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int		ft_strlen(char *s);
 void	ft_putchar(char c);
@@ -62,4 +68,6 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
+
+#endif
 

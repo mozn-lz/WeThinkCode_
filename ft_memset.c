@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:44:55 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/28 11:46:03 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/30 18:38:18 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	a = b;
 	i = 0;
-	while ((a[i] != '\0') && len > 0)
+	a = (unsigned char *)malloc(sizeof(b) * len);
+	if (a)
 	{
-		a[i] = (unsigned char)c;
-		i++;
-		len--;
+		while ((a[i] != '\0') && len > 0)
+		{
+			a[i] = (unsigned char)c;
+			i++;
+			len--;
+		}
 	}
 	return (b);
 }

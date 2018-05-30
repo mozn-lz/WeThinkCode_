@@ -12,10 +12,13 @@ NAME=libft.a
 OBJ=$(SRC:.c=.o)
 
 $(NAME): 
+	$(CC) $(FLAGS) -c $(HEAD) $(SRC)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
+cpl:
+	clear
 	$(CC) $(FLAGS) $(HEAD) $(SRC) $(MAIN)
-#	$(CC) $(FLAGS) -c $(HEAD) $(SRC)
-#	ar rc $(NAME) $(OBJ)
-#	ranlib $(NAME)
 
 all: $(NAME)
 

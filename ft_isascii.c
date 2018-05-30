@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:42:25 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/28 11:42:41 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/30 18:14:51 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 int		ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return (c);
+		return (1);
 	else
 		return (0);
+}
+
+int		main(void)
+{
+	printf("%d\n", ft_isascii('a'));
+	return (0);
 }

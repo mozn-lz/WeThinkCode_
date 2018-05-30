@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:32:54 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/28 12:33:22 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/30 20:15:07 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		ft_atoi(const char *str)
 	{
 		if (str[i] >= 48 && str[i] <= 57)
 			rst = ((str[i] - '0') + (10 * rst));
+		else
+			return (rst);
 		i++;
 	}
 	return (sym * rst);

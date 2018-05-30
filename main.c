@@ -6,17 +6,23 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 02:32:23 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/30 14:09:07 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/30 17:31:05 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 
+
+//int		main(int ac, char **av)
 int		main()
 {
-	char a = 'a';
-	ft_putstr(ft_toupper(a));
+	int c;
+	if (ac < 5)
+		c = 'a';	
+	//char a = '2';
+	c= ft_isalnum(3);
+	ft_putnbr(c);
 	ft_putstr("\n");
 	return (0);
 }
