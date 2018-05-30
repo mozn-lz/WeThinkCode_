@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/29 02:32:23 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/29 02:43:24 by msefako          ###   ########.fr       */
+/*   Created: 2018/05/28 23:21:56 by msefako           #+#    #+#             */
+/*   Updated: 2018/05/28 23:54:03 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int		ftlen(char *s)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int	i = 0;
+	char *fresh;
 
-	while (s[i++])
-	;
-	return (i -1);
-}
-
-int		main()
-{
-	char a[] = "hello";
-	printf ("%d\n", ftlen(a));
-	return (0);
+	ft_striter(s, f(s));
+	fresh = (char *) malloc(sizeof(char) * ft_strlen(s));
+	if (fresh)
+		return (fresh);
+	return (NULL);
 }

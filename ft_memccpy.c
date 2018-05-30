@@ -1,23 +1,33 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stritr.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 13:24:33 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/28 23:10:20 by msefako          ###   ########.fr       */
+/*   Created: 2018/05/28 11:52:50 by msefako           #+#    #+#             */
+/*   Updated: 2018/05/28 12:07:21 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char*))
+void	*ft_memccpy(void *restrict dt, const void *restrict sc, int c, size_t n)
 {
-	int i;
+	int					i;
+	unsigned char		*a;
+	unsigned const char	*b;
 
 	i = 0;
-	if (ft_strlen(s) > 0)
-		while(s[i] != '\0')
-			f(s[i++]);
+	a = dt;
+	b = sc;
+	while (n-- > 0)
+	{
+		if (b[i] == (unsigned char)c)
+			return (dt);
+		else
+			a[i] = b[i];
+		i++;
+	}
+	return (dt);
 }

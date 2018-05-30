@@ -11,41 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_isspace(char *s)
-{
-	if (s == "\n" || s == "\t" || s == " ")
-		return (NULL);
-	return (s);
-}
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
-	int		i;
-	int		start;
-	int		end;
-	char	fresh;
+	int		st;
+	int		ed;
+	char	*fresh;
 
-	i = 0;
-	start = 0;
-	end = 0;
+	st = 0;
+	ed = strlen(s);
 	if(s)
 	{
-		while (s[i] != '\0')
-		{
-			if (ft_isspace(s[i]) != NULL)
-				start = i;
-			i++;
-		}
-		i = ft_strlen(s);
-		while (i >= start)
-		{
-			if (ft_isspace(s[i]) != NULL)
-				end = i;
-			i--;
-		}
-		ft_strncpy(s[start],start - i );
+		while (s[st] == '\n' || s[st] == ' ' || s[st] == '\t')
+			st++;
+		while (s[ed] == '\n' || s[ed] == ' ' || s[ed] == '\t')
+			ed--;
+//		strncpy(fresh,s[st], (ed - st));
+
 	}
 	return (NULL);
 }
-

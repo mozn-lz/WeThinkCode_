@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 13:05:07 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/28 13:17:17 by msefako          ###   ########.fr       */
+/*   Created: 2018/05/28 13:17:46 by msefako           #+#    #+#             */
+/*   Updated: 2018/05/28 13:22:14 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strclr(char *s)
+#include "libft.h"
+
+void	*ft_memalloc(size_t size)
 {
-	ft_bzero(s, ft_strlen(s));
+	char	*rtn;
+
+	rtn = (void*)malloc(sizeof(size_t) * size);
+	if (rtn)
+	{
+		ft_memset(rtn, '0', size);
+		return (rtn);
+	}
+	return (NULL);
 }
