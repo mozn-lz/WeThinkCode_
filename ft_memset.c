@@ -6,28 +6,23 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:44:55 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/30 18:38:18 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 16:49:45 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *str, int character, size_t size)
 {
 	size_t			i;
-	unsigned char	*a;
+	unsigned char	*pointer;
 
-	a = b;
 	i = 0;
-	a = (unsigned char *)malloc(sizeof(b) * len);
-	if (a)
+	pointer = (unsigned char*)str;
+	while (i < size)
 	{
-		while ((a[i] != '\0') && len > 0)
-		{
-			a[i] = (unsigned char)c;
-			i++;
-			len--;
-		}
+		pointer[i] = character;
+		i++;
 	}
-	return (b);
+	return (str);
 }

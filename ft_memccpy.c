@@ -6,28 +6,29 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:52:50 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 11:04:55 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 16:52:56 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-void	*ft_memccpy(void *restrict dt, const void *restrict sc, int c, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int character, size_t size)
 {
-	int					i;
-	unsigned char		*a;
-	unsigned const char	*b;
+	size_t					counter;
+	const unsigned char		*source;
+	unsigned char			*destination;
 
-	i = 0;
-	a = dt;
-	b = sc;
-	while (n-- > 0)
+	counter = 0;
+	source = src;
+	destination = dest;
+	while (counter < size)
 	{
-		if (b[i] == (unsigned char)c)
-			return (dt);
-		else
-			a[i] = b[i];
-		i++;
+		destination[counter] = source[counter];
+		if (source[counter] == (unsigned char)character)
+			return (dest + counter + 1);
+		counter++;
 	}
-	return (dt);
+	return (NULL);
 }

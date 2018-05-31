@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:11:16 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 11:34:49 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 15:41:59 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 char	*ft_strstr(const char *stack, const char *needle)
 {
-	int		i;
-	int		j;
-	char	*nstack;
+	unsigned int hc;
+	unsigned int nc;
+	unsigned int i;
 
-	i = 0;
-	j = 0;
-	nstack = (char*)stack;
-	while (stack)
+	hc = 0;
+	nc = 0;
+	i = ft_strlen((char*)needle);
+	if (i == 0)
+		return ((char*)stack);
+	while (stack[hc])
 	{
-		if (ft_strlen((char*)needle) == 0)
-			return (&nstack[i]);
-		j = 0;
-		while (stack[i + j] == needle[j])
-			if (needle[j++] == '\0')
-			{
-				return (&nstack[i]);
-			}
-		i++;
+		while (needle[nc] == stack[hc + nc])
+		{
+			if (nc == i - 1)
+				return ((char*)stack + hc);
+			nc++;
+		}
+		nc = 0;
+		hc++;
 	}
-	return (NULL);
+	return (0);
 }

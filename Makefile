@@ -16,10 +16,6 @@ $(NAME):
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-cpl:
-	clear
-	$(CC) $(FLAGS) $(HEAD) $(SRC) $(MAIN)
-
 all: $(NAME)
 
 clean:
