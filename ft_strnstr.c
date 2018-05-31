@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:12:04 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 15:23:37 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 20:58:06 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char	*ft_strnstr(const char *stack, const char *needle, size_t len)
 	while (*stack && len)
 	{
 		if (*stack == needle[counter])
-				counter++;
+			counter++;
 		else
-			counter =0;
+			counter = 0;
 		if (needle[counter] == '\0')
 			return ((char*)stack - counter + 1);
 		stack++;

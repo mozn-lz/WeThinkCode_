@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:13:40 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 15:38:39 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 21:31:58 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_strncpy(char *dest, const char *src, size_t len)
 		i++;
 	}
 	while (i < len)
-    {
-        dest[i] = '\0';
-        i++;
-    }
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }

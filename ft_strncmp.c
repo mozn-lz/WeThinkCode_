@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 19:58:44 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 15:33:08 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 21:33:11 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] &&s2[i]
-			&& n > 0)
+	while (s1[i] == s2[i] && s1[i] && s2[i] && n > 0)
 	{
 		i++;
 		n--;

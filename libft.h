@@ -6,18 +6,19 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 14:28:44 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 11:32:19 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 20:42:13 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 200
 
-#define BUFF_SIZE 200
-
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
+# include <ctype.h>
+# include <stdio.h>
 
 int		ft_strlen(char *s);
 void	ft_putchar(char c);

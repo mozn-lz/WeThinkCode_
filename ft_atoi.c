@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:32:54 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 15:16:49 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 20:43:08 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	long long int n;
+	int				i;
+	long long int	n;
 
 	i = 0;
 	while ((*str >= '\t' && *str <= '\r') || *str == 32)
