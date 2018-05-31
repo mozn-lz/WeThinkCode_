@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:21:03 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 07:26:23 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 11:27:02 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_strcmp(const char *s1, const char *s2)
 			return (-1);
 		else if (s1[i] > s2[i])
 			return (1);
-		i++; 
+		i++;
 	}
 	return (0);
 }

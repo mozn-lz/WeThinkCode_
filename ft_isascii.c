@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:42:25 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/30 18:14:51 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 11:28:10 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,4 @@ int		ft_isascii(int c)
 		return (1);
 	else
 		return (0);
-}
-
-int		main(void)
-{
-	printf("%d\n", ft_isascii('a'));
-	return (0);
 }

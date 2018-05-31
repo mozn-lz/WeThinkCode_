@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:11:16 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 08:21:59 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 11:34:49 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strstr(const char *stack, const char *needle)
 	nstack = (char*)stack;
 	while (stack)
 	{
-		if (strlen(needle) == 0)
+		if (ft_strlen((char*)needle) == 0)
 			return (&nstack[i]);
 		j = 0;
 		while (stack[i + j] == needle[j])

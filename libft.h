@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 14:28:44 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/30 18:02:56 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 11:32:19 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_strlen(char *s);
 void	ft_putchar(char c);
