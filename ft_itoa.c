@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 23:21:56 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/01 16:38:35 by msefako          ###   ########.fr       */
+/*   Created: 2018/06/01 16:45:04 by msefako           #+#    #+#             */
+/*   Updated: 2018/06/01 17:12:01 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_itoa(int n)
 {
-	char	*fresh;
-	char	*temp;
+	char *str;
+	char sym;
+	int strl;
 
-	fresh = (f*) malloc(sizeof(f) * ft_strlen(s));
-	if (fresh)
-		return (fresh);
-	return (NULL);
+	strl = 0;
+	if(n < 0)
+		sym = '-';
+	str = (char*)malloc(sizeof(char) * ((n +'0') + 1));
+	if (!str)
+		return (NULL);
+	str = n + '0';
+	strl = ft_strlen(str);
+	str[strl] = '\0';
+	return (str);
+}
+
+int		main(void)
+{
+	printf("%s\n", ft_itoa(30));
+	return (0);
 }

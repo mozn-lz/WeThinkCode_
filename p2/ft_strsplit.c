@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 23:05:03 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/01 14:47:05 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/01 15:33:22 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,46 +15,43 @@
 
 char	**ft_strsplit(char const *s, char c)
 {
-
 	int		i;
 	int		wd;
 	int		lt_cnt;
 	char	**fresh;
 
-	i = 0;
+	i = -1;
 	wd = -1;
 	lt_cnt = 0;
-
-	while (s[i] != '\0')
+	while (s[++i] != '\0')
 	{
 		while (s[i++] != c)
 			lt_cnt++;
-		*fresh = (char*) malloc(sizeof(char) * lt_cnt);
+		*fresh = (char*)malloc(sizeof(char)* lt_cnt);
 		if (fresh)
 		{
 			wd++;
-			**fresh[wd][lt_cnt--] == '\0';
-			while(lt_cnt >= 0)
+			fresh[wd][lt_cnt--] = '\0';
+			while (lt_cnt >= 0)
 			{
-				**fresh[wd][lt_cnt] == s[i - lt_cnt];
-					lt_cnt--;
+				fresh[wd][lt_cnt] = s[i - lt_cnt];
+				lt_cnt--;
 			}
 		}
 		else
 			return (NULL);
-		i++;
 	}
-	if(s [i] == '\0')
+	if (s[i] == '\0')
 		return (fresh);
 }
 
-int main()
+int		main(void)
 {
 	int i;
 	i = 0;
 	char *s = "welcome to cape town";
 	char **ret = ft_strsplit(s, ' ');
-	while (ret[i] )
+	while (ret[i])
 	{
 		printf("%s\n", ret[i]);
 		i++;
