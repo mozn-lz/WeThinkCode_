@@ -15,5 +15,5 @@
 void	ft_memdel(void **ap)
 {
 	free(ap);
-	ft_bzero(ap, sizeof(ap));
+	ft_memdel(ft_bzero(ap, sizeof(ap)));
 }

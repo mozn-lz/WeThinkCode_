@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:44:55 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 16:49:45 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/01 15:12:52 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *str, int character, size_t size)
 	pointer = (unsigned char*)str;
 	while (i < size)
 	{
-		pointer[i] = character;
+		pointer[i] = (unsigned char)character;
 		i++;
 	}
 	return (str);

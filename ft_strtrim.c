@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 13:22:46 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/28 13:23:53 by msefako          ###   ########.fr       */
+/*   Created: 2018/05/29 04:00:28 by msefako           #+#    #+#             */
+/*   Updated: 2018/06/01 15:05:28 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_memdel(void **ap)
+char	*ft_strtrim(char const *s)
 {
-	free(ap);
-	ft_memdel(ft_bzero(ap, sizeof(ap)));
+	int		st;
+	int		ed;
+	char	*fresh;
+
+	st = 0;
+	ed = strlen(s);
+	if (s)
+	{
+		while (s[st] == '\n' || s[st] == ' ' || s[st] == '\t')
+			st++;
+		while (s[ed] == '\n' || s[ed] == ' ' || s[ed] == '\t')
+			ed--;
+		fresh = ft_strsunb(s, st, (ed - st));
+		return (fresh);
+	}
+	return (NULL);
 }

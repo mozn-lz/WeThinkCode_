@@ -6,19 +6,20 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 23:05:03 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/01 05:42:20 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/01 14:47:05 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-char ** ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 
-	int i;
-	int wd;
-	int	lt_cnt;
-	char fresh[5][5];
+	int		i;
+	int		wd;
+	int		lt_cnt;
+	char	**fresh;
 
 	i = 0;
 	wd = -1;
@@ -28,14 +29,14 @@ char ** ft_strsplit(char const *s, char c)
 	{
 		while (s[i++] != c)
 			lt_cnt++;
-		fresh = (char*) malloc(sizeof(char) * lt_cnt);
+		*fresh = (char*) malloc(sizeof(char) * lt_cnt);
 		if (fresh)
 		{
 			wd++;
-			fresh[wd][lt_cnt--] == '\0';
+			**fresh[wd][lt_cnt--] == '\0';
 			while(lt_cnt >= 0)
 			{
-				fresh[wd][lt_cnt] == s[i - lt_cnt];
+				**fresh[wd][lt_cnt] == s[i - lt_cnt];
 					lt_cnt--;
 			}
 		}
@@ -43,30 +44,20 @@ char ** ft_strsplit(char const *s, char c)
 			return (NULL);
 		i++;
 	}
-	if(str [i] == '\0')
+	if(s [i] == '\0')
 		return (fresh);
 }
 
 int main()
 {
 	int i;
-	int j;
-	char arr;
-	char str[] = "life i aewsome";
-	char obs = '*';
-
 	i = 0;
-	j = 0;
-	arr = ft_strsplit(str, obs);
-	while (arr[i])
+	char *s = "welcome to cape town";
+	char **ret = ft_strsplit(s, ' ');
+	while (ret[i] )
 	{
-		while (arr[i][j] != '\0')
-		{
-			printf("%c", arr[i][j]);
-			j++;
-		}
+		printf("%s\n", ret[i]);
 		i++;
-		j = 0;
 	}
 	return (0);
 }
