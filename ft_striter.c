@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 13:24:33 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/31 20:46:15 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 22:06:16 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_striter(char *s, void (*f)(char*))
 {
 	if (s != NULL)
-		while (s != NULL)
+		while (s)
 			f(s++);
 }

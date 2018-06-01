@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 02:45:29 by msefako           #+#    #+#             */
-/*   Updated: 2018/05/29 02:57:23 by msefako          ###   ########.fr       */
+/*   Updated: 2018/05/31 22:26:05 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_strequ(char const *s1, char const *s2)
 {
-	if (strncmp(s1, s2) == 0)
+	if (strcmp(s1, s2) == 0)
 		return (1);
 	else
 		return (0);
