@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/01 16:45:04 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/02 15:17:34 by msefako          ###   ########.fr       */
+/*   Created: 2018/06/02 12:12:49 by msefako           #+#    #+#             */
+/*   Updated: 2018/06/02 12:26:52 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+void	ft_putchar_fd(char c, int fd)
 {
-	char *str;
-	int i;
-
-	i = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		str[i++] == '-';
-	}
-	if (n >= 10)
-		ft_itoa(n/10);
-	if (n )
-	return (str);
-}
-
-int		main(void)
-{
-	printf("%s\n", ft_itoa(30));
-	return (0);
+	write(fd, &c, 1);
 }
