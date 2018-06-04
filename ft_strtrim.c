@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 04:00:28 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/02 13:18:10 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/04 17:04:44 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s)
 			st++;
 		while (s[ed] == '\n' || s[ed] == ' ' || s[ed] == '\t')
 			ed--;
-		fresh = ft_strsunb(s, st, (ed - st));
+		fresh = ft_strsub(s, st, (ed - st));
 		return (fresh);
 	}
 	return (NULL);
