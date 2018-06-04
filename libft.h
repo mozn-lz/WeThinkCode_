@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 13:41:16 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/02 13:42:41 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/04 20:21:25 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dest, const char *src);
 void	ft_strdel(char **as);
 char	*ft_strdup(const char *src);
-int 	ft_strequ(char const *s1, char const *s2);
+int		ft_strequ(char const *s1, char const *s2);
 void	ft_striter(char *s, void (*f)(char*));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -65,6 +65,9 @@ char	*ft_strncpy(char *dest, const char *src, size_t len);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strnstr(const char *stack, const char *needle, size_t len);
+char	**ft_strsplit(char const *s, char c);
+int		ft_wordcount(char const *s, char c);
+char	*ft_strndup(const char *s, size_t n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *stack, const char *needle);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);

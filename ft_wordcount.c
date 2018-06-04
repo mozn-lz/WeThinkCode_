@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 23:55:33 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/04 21:23:43 by msefako          ###   ########.fr       */
+/*   Created: 2018/06/04 19:25:23 by msefako           #+#    #+#             */
+/*   Updated: 2018/06/04 19:25:31 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
+int		ft_wordcount(char const *s, char c)
 {
-	int		i;
-	char	*fresh;
-	char	*s;
+	unsigned int	counter1;
+	int				counter2;
 
-	s = (char*)str;
-	i = 0;
-	if (!s || !f)
-		return (NULL);
-	fresh = (char*)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (fresh)
+	counter1 = 0;
+	counter2 = 0;
+	while (s[counter1])
 	{
-		while (s[i] != '\0')
-		{
-			fresh[i] = (f)(i, s[i]);
-			i++;
-		}
-		fresh[i] = '\0';
+		while (s[counter1] == c)
+			counter1++;
+		if (s[counter1] != '\0' && s[counter1] != c)
+			counter2++;
+		while (s[counter1] && (s[counter1] != c) && s[counter1] != '\0')
+			counter1++;
 	}
-	else
-		return (NULL);
-	return (fresh);
+	return (counter2);
 }

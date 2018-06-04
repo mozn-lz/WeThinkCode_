@@ -1,13 +1,14 @@
 #include "libft.h"
 
-int main(void)
+int		main(void)
 {
-	char	*str = "We think code_";
-	char	*as;
-	as = ft_strsub(str, 3, 1);
-	printf("strsub %s\n", as);
-	as = ft_strspilt(str, ' ');
-	printf("strsub %s\n", as);
+	char *s1 = "WeThin";
+	char *s2 = "kcode_";
+	char *s3;
 
+	printf("s2%s\n", s2);
+
+	ft_strjoin(s1, s2);
+	printf("s3: %s\n", s1);
 	return (0);
 }

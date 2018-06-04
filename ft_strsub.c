@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 03:10:25 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/04 16:32:43 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/04 19:42:06 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*fresh;
+	char		*fresh;
 	size_t		i;
 
 	i = 0;
