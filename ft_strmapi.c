@@ -16,11 +16,19 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	fresh;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_striteri(s, f(i, s[i]));
-		i++;
-	}
+	if (!s || !f)
+		return (NULL);
 	fresh = (f*) malloc(sizeof(f) * ft_strlen(s));
+	if (fresh)
+	{
+		while (s[i] != '\0')
+		{
+			fresh[i] = i(f)(i, s[i]);
+			i++;
+		}
+		fresh[i] = '\0';
+	}
+	else
+		return (NULL);
 	return (fresh);
 }

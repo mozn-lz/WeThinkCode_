@@ -1,53 +1,39 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/01 16:45:04 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/02 21:16:25 by msefako          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stdlib.h>
 
-#include "libft.h"
-
-char	*ft_itoa(int n)
+int		int_sz(int nbr)
 {
-	char *str;
-	int i;
+	int		i;
 
-	i = 0;
-	if (n < 0)
+	i = (nbr <= 0) ? 1 : 0;
+	while (nbr != 0)
 	{
-		n *= -1;
-		str[i++] = '-';
+		nbr = nbr / 10;
+		i++;
 	}
-	if (n >= 10)
-		ft_itoa(n /= 10);
-	if (n < 10)
-		str[i++] = (n + '0');
-	ft_putchar(n * 10 + '0');
+	return (i);
+}
+
+char	*ft_itoa(int nbr)
+{
+	int		size;
+	int		sym;
+	char	*str;
+
+	size = int_sz(nbr);
+	str = (char *)malloc(sizeof(char) * size + 1);
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		sym  = '-';
+	}
+	str[size] = '\0';
+	size--;
+	while (size >= 0)
+	{
+		str[size] = '0' + (nbr % 10) ;
+		nbr = (nbr / 10);
+		size--;
+	}
+	(sym == '-') ? (str[0] = sym) :str[0];
 	return (str);
-}
-
-char ita(int num)
-{
-	char *str;
-	int i = 0;
-	 while (num != 0)
-	 {
-        int rem = num % 10;
-        str[i++] = (rem > 9)? (rem-10) + 'A' : rem + '0';
-        num = num/10;
-    }
-	 return (*str);
-}
-
-int		main(void)
-{
-	printf("%d\n", ita(350));
-//	printf("%s\n", ft_itoa(350));
-//	printf("%d\n", (350 + '0'));
-	return (0);
 }

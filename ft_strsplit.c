@@ -11,38 +11,44 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+/*
+char	*strndup(char *s, int size)
+{
+	int i;
 
+	i = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * (i + 1));
+
+	while (size >= 0)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	return (*str)
+}
+*/
 char	**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		wd;
-	int		lt_cnt;
+	int		lt;
 	char	**fresh;
 
 	i = -1;
-	wd = -1;
-	lt_cnt = 0;
+	wd = 0;
+	lt = 0;
 	while (s[++i] != '\0')
 	{
-		while (s[i++] != c)
-			lt_cnt++;
-		*fresh = (char*)malloc(sizeof(char)* lt_cnt);
-		if (fresh)
-		{
-			wd++;
-			fresh[wd][lt_cnt--] = '\0';
-			while (lt_cnt >= 0)
-			{
-				fresh[wd][lt_cnt] = s[i - lt_cnt];
-				lt_cnt--;
-			}
-		}
-		else
-			return (NULL);
+		while (s[i] != c)
+			lt++;
+//		fresh[wd] = (char *) malloc(sizeof(char) * lt +1);
+		strncpy(fresh[wd], (char *)s[i],lt);
+//		fresh[wd] = ft_strdup(s[i] );
+		wd++;
+		i++;
 	}
-	if (s[i] == '\0')
-		return (fresh);
+	return (fresh);
 }
 
 int		main(void)
