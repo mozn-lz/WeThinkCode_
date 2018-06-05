@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 03:48:27 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/05 00:48:37 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/05 21:10:07 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ char	*ft_strjoin(char const *str1, char const *str2)
 		fresh = ft_strnew(i);
 		if (fresh)
 		{
-			fresh = ft_strcpy(fresh, s2);
-			fresh = ft_strcat(s1, s2);
+			fresh = ft_strcpy(fresh, s1);
+			fresh = ft_strcat(fresh, s2);
 			return (fresh);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 19:32:59 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/05 01:03:42 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/05 22:35:33 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static	size_t		int_sz(int nbr)
 {
-	size_t	i;
+	size_t			i;
 
-	i = 1;
+	i = 0;
 	while (nbr != 0)
 	{
 		nbr /= 10;
@@ -25,33 +25,28 @@ static	size_t		int_sz(int nbr)
 	return (i);
 }
 
-char			*ft_itoa(int nbr)
+char				*ft_itoa(int n)
 {
-	int		size;
-	int		sym;
-	char	*str;
+	char			*str;
+	size_t			len;
+	unsigned int	tmp_n;
 
-	if (nbr)
+	tmp_n = n;
+	len = int_sz(n);
+	if (n < 0)
 	{
-		size = int_sz(nbr);
-		if (nbr < 0)
-		{
-			nbr *= -1;
-			sym = '-';
-			size++;
-		}
-		str = ft_strnew(size);
-		if (str)
-		{
-			while (size >= 0)
-			{
-				str[size] = '0' + (nbr % 10);
-				nbr = (nbr / 10);
-				size--;
-			}
-			(sym == '-') ? (str[0] = sym) : str[0];
-			return (str);
-		}
+		tmp_n = -n;
+		len++;
 	}
-	return (NULL);
+	str = "0";
+	if (n == 0)
+		return (str);
+	if (!(str = ft_strnew(len)))
+		return (NULL);
+	str[--len] = tmp_n % 10 + '0';
+	while (tmp_n /= 10)
+		str[--len] = tmp_n % 10 + '0';
+	if (n < 0)
+		*(str + 0) = '-';
+	return (str);
 }
