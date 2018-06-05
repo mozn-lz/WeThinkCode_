@@ -14,18 +14,27 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
+	long	div;
+	char	c;
+	long	l_n;
 
-	i = 0;
+	l_n = (long)n;
+	div = 1;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n *= -1;
+		l_n *= -1;
 	}
-	if (n >= 10)
+	if (n == 0)
+		ft_putchar_fd('0', fd);
+	while (div <= l_n)
+		div *= 10;
+	div /= 10;
+	while (div != 0)
 	{
-		ft_putnbr_fd((n / 10), fd);
+		c = (l_n / div) + '0';
+		ft_putchar_fd(c, fd);
+		l_n %= div;
+		div /= 10;
 	}
-	if (i < 10)
-		ft_putchar_fd((n % 10) + '0', fd);
 }

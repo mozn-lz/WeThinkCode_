@@ -15,7 +15,7 @@
 char	*ft_strjoin(char const *str1, char const *str2)
 {
 	char	*fresh;
-	int		i;
+	size_t	i;
 	char	*s1;
 	char	*s2;
 
@@ -24,12 +24,12 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	i = 0;
 	if (s1 && s2)
 	{
-		fresh = (char*)malloc(sizeof(char) * ( ft_strlen(s2)) + 1);
+		i = ft_strlen(s1) + ft_strlen(s2);
+		fresh = ft_strnew(i);
 		if (fresh)
 		{
+			fresh = ft_strcpy(fresh, s2);
 			fresh = ft_strcat(s1, s2);
-			i = ft_strlen(fresh);
-			fresh[i] = '\0';
 			return (fresh);
 		}
 	}

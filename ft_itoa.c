@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-static	int		int_sz(int nbr)
+static	size_t		int_sz(int nbr)
 {
-	int		i;
+	size_t	i;
 
-	i = (nbr <= 0) ? 1 : 0;
+	i = 1;
 	while (nbr != 0)
 	{
-		nbr = nbr / 10;
+		nbr /= 10;
 		i++;
 	}
 	return (i);
@@ -34,16 +34,15 @@ char			*ft_itoa(int nbr)
 	if (nbr)
 	{
 		size = int_sz(nbr);
-		str = (char *)malloc(sizeof(char) * size + 1);
+		if (nbr < 0)
+		{
+			nbr *= -1;
+			sym = '-';
+			size++;
+		}
+		str = ft_strnew(size);
 		if (str)
 		{
-			if (nbr < 0)
-			{
-				nbr *= -1;
-				sym = '-';
-			}
-			str[size] = '\0';
-			size--;
 			while (size >= 0)
 			{
 				str[size] = '0' + (nbr % 10);
