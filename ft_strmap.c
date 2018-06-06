@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 23:21:56 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/04 22:19:21 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/06 00:45:41 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strmap(char const *str, char (*f)(char))
 
 	s = (char*)str;
 	i = 0;
+	if (!f || !str)
+		return (NULL);
 	fresh = (char*)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (fresh)
 	{

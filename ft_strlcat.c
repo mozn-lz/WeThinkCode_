@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 18:39:31 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/04 22:00:00 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/06 03:24:36 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ size_t		ft_strlcat(char *dest, const char *src, size_t destsize)
 			size--;
 		}
 		i++;
+		dest[dlen + i] = '\0';
 	}
-	dest[dlen + i] = '\0';
 	return (dlen + i);
 }

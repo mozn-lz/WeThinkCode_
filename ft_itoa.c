@@ -6,47 +6,57 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 19:32:59 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/05 22:35:33 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/06 04:23:57 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t		int_sz(int nbr)
+static char		*getstr(char *ptr)
 {
-	size_t			i;
+	char		*str;
+	int			i;
 
 	i = 0;
-	while (nbr != 0)
+	while (ptr[i] != '\0')
+		i++;
+	str = (char *)ft_memalloc(sizeof(char) * i + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (ptr[i] != '\0')
 	{
-		nbr /= 10;
+		str[i] = ptr[i];
 		i++;
 	}
-	return (i);
+	str[i] = '\0';
+	return (str);
 }
 
-char				*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char			*str;
-	size_t			len;
-	unsigned int	tmp_n;
+	int			neg;
+	char		*ptr;
+	long int	num;
+	char		buf[50];
 
-	tmp_n = n;
-	len = int_sz(n);
-	if (n < 0)
+	neg = 0;
+	num = n;
+	ptr = &buf[49];
+	*ptr = '\0';
+	if (num == 0)
+		*--ptr = '0';
+	if (num < 0)
 	{
-		tmp_n = -n;
-		len++;
+		neg = 1;
+		num = num * -1;
 	}
-	str = "0";
-	if (n == 0)
-		return (str);
-	if (!(str = ft_strnew(len)))
-		return (NULL);
-	str[--len] = tmp_n % 10 + '0';
-	while (tmp_n /= 10)
-		str[--len] = tmp_n % 10 + '0';
-	if (n < 0)
-		*(str + 0) = '-';
-	return (str);
+	while (num > 0)
+	{
+		*--ptr = "0123456789"[num % 10];
+		num = num / 10;
+	}
+	if (neg == 1)
+		*--ptr = '-';
+	return (getstr(ptr));
 }
