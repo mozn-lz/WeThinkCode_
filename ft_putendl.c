@@ -6,14 +6,16 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 16:39:41 by msefako           #+#    #+#             */
-/*   Updated: 2018/06/02 13:54:25 by msefako          ###   ########.fr       */
+/*   Updated: 2018/06/12 11:21:42 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(const char *s)
+void	ft_putendl(char const *s)
 {
+	if (!s)
+		return ;
 	ft_putstr((char*)s);
 	ft_putchar('\n');
 }

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: msefako <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/06/12 10:34:13 by msefako           #+#    #+#              #
-#    Updated: 2018/06/12 10:34:41 by msefako          ###   ########.fr        #
+#    Created: 2018/06/12 11:03:18 by msefako           #+#    #+#              #
+#    Updated: 2018/06/12 11:09:28 by msefako          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,23 +74,23 @@ SRC = ft_atoi.c \
 
 NAME = libft.a
 
-OBJ = $(SRC:.c=.o)
+
+OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar rc $@ $?
+	ranlib $@
 
 %.o: %.c 
 	gcc $(FLAGS) -c $< -o $@ 
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
-
-.PHONY: all, clean, fclean, re
+RM = rm -f
