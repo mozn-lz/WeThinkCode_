@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_wordcount(char const *s, char c)
+int		ft_wordcount(const char *s, char c)
 {
 	unsigned int	counter1;
 	int				counter2;
